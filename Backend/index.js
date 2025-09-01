@@ -9,8 +9,8 @@ dotenv.config();
 const Port = process.env.Port;
 const Mongodburl = process.env.Mongodburl;
 app.use(express.json());
-app.get("/", aysnc() {
-  console.log("Backend is running")
+app.get("/", aysnc(req,res) {
+  res.send("Backend is running")
 })
 try {
   Mongodbconnect(Mongodburl);
