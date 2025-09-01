@@ -6,22 +6,22 @@ import Bookroute from "./Routes/Bookroute.js";
 import cors from "cors";
 
 dotenv.config();
-// const Port = process.env.Port;
-// const Mongodburl = process.env.Mongodburl;
+const Port = process.env.Port;
+const Mongodburl = process.env.Mongodburl;
 app.use(express.json());
 app.get("/", (req,res) => {
   console.log("Backend is running");
   res.send("Backend is running");
 })
-// try {
-//   Mongodbconnect(Mongodburl);
-//   console.log("Mongodb connected");
-// } catch (error) {
-//   console.log("Error in connected mongodb", error);
-// }
+try {
+  Mongodbconnect(Mongodburl);
+  console.log("Mongodb connected");
+} catch (error) {
+  console.log("Error in connected mongodb", error);
+}
 app.use(cors());
 
 app.use("/Books", Bookroute);
-app.listen(3000, () => {
-  console.log("App is running on Port : 3000")
+app.listen(Port, () => {
+  console.log(`App is running on Port : ${Port}`)
 });
