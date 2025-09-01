@@ -6,8 +6,8 @@ import Bookroute from "./Routes/Bookroute.js";
 import cors from "cors";
 
 dotenv.config();
-const Port = process.env.Port;
-const Mongodburl = process.env.Mongodburl;
+const Port = process.env.PORT;
+const Mongodburl = process.env.MONGODB_URL;
 app.use(express.json());
 app.get("/", (req,res) => {
   console.log("Backend is running");
