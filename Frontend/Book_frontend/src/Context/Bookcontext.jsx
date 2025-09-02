@@ -11,7 +11,7 @@ export default function GlobalState({ children }) {
     async function fetchBooks() {
       setLoading(true);
       try {
-        const res = await fetch("http://localhost:3000/books");
+        const res = await fetch("http://localhost:3000/api/books");
         const data = await res.json();
         setBooks(data);
       } catch (error) {
