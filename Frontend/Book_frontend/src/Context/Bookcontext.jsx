@@ -30,7 +30,7 @@ export default function GlobalState({ children }) {
     async function fetchBookByName() {
       setLoading(true);
       try {
-        const res = await fetch(`http://localhost:3000/books/${term}`);
+        const res = await fetch(`/api/books/${term}`);
         const searcheddata = await res.json();
         setSearchedBook(searcheddata);
       } catch (error) {
