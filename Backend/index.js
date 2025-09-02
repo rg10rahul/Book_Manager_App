@@ -21,7 +21,7 @@ try {
 }
 app.use(cors());
 
-app.use("/Books", Bookroute);
+app.use("/books", Bookroute);
 app.listen(Port, () => {
   console.log(`App is running on Port : ${Port}`)
 });
